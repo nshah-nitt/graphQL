@@ -7,10 +7,13 @@ const typeDefs = gql`
         username:String!
         age:Int!
         nationality:String!
+        friendId:[Int]!
+        friend:[User]
     }
 
     type Query{
-        users:[User!]!
+        users:[User!]!,
+        user(id:ID!):User
     }
 `
 

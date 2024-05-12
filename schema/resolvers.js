@@ -34,6 +34,22 @@ const resolvers = {
             user.id = Number(last_user.id)+1
             UserList.push(args.input)
             return user;
+        },
+        modifyUser:(parent,args)=>{
+            let user = UserList.find(user=> user.id==args.input.id)
+            user.name = args.input.name || user.name
+            user.username = args.input.username || user.username
+            user.age = args.input.age || user.age
+            user.nationality = args.input.nationality || user.nationality
+
+            return user;
+
+        },
+        deleteUser:(parent,args)=>{
+            let user_index = UserList.findIndex(user=>user.id==args.input.id)
+
+            UserList.splice(user_index,1)
+            return "User deleted Successfully"
         }
     }
 }

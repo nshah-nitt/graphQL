@@ -24,6 +24,15 @@ const typeDefs = gql`
         nationality:String = "Earth"
         friendId:[Int!]
     }
+    input editUserDetails{
+        id:ID!
+        name:String
+        age:Int
+        nationality:String
+    }
+    input deleteUserInput{
+        id:ID!
+    }
 
     type Query{
         users:[User!]!,
@@ -34,6 +43,8 @@ const typeDefs = gql`
 
     type Mutation{
         createUser(input:createUserInput!):User
+        modifyUser(input:editUserDetails!):User
+        deleteUser(input:deleteUserInput!):String!
     }
 `
 

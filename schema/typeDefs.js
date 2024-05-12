@@ -10,10 +10,30 @@ const typeDefs = gql`
         friendId:[Int]!
         friend:[User]
     }
+    type Movie{
+        id:ID!
+        name:String!
+        releaseYear:Int!
+        inTheaters:Boolean
+    }
+
+    input createUserInput{
+        name: String!
+        username:String = "noname@123"
+        age:Int!
+        nationality:String = "Earth"
+        friendId:[Int!]
+    }
 
     type Query{
         users:[User!]!,
-        user(id:ID!):User
+        user(id:ID!):User,
+        movies:[Movie!]!,
+        movie(name:String!):Movie
+    }
+
+    type Mutation{
+        createUser(input:createUserInput!):User
     }
 `
 

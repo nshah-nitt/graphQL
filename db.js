@@ -32,3 +32,30 @@ export const UserList = [
         friendId:[1,2,3]
     }
 ]
+
+export const MovieList = [
+    {
+        id:1,
+        name:"Baghban",
+        releaseYear:2003,
+        inTheaters:false
+    },
+    {
+        id:2,
+        name:"Three Idiots",
+        releaseYear:2009,
+        inTheaters:false
+    },
+    {
+        id:2,
+        name:"Srikanth",
+        releaseYear:2024,
+        inTheaters:true
+    },
+    {
+        id:4,
+        name:"Dangal",
+        releaseYear:2016,
+        inTheaters:false
+    }
+]
